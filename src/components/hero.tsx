@@ -154,7 +154,7 @@ export default function Hero() {
           className="rounded-[32px] overflow-hidden shadow-sm border border-neutral-100 relative min-h-[260px] group cursor-pointer"
         >
           <Image
-            src="/avatar3.png"
+            src="/avatar.webp"
             alt="Designer Portrait"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
