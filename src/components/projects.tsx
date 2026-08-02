@@ -165,7 +165,7 @@ export default function Projects() {
 
       {/* Grid of Projects */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <motion.div
             key={project.id}
             variants={cardVariants}
@@ -180,6 +180,8 @@ export default function Projects() {
                 alt={project.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={index === 0}
+                loading={index === 0 ? "eager" : "lazy"}
                 className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
               />
 
