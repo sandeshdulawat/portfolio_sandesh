@@ -40,7 +40,7 @@ const projects: Project[] = [
     categoryBadges: ["Community App", "Full Stack"],
     rating: "5.0",
     statusTag: "Featured",
-    techStack: "React • JavaScript • Auth.js • Tailwind",
+    techStack: "React • JavaScript • Auth.js • Tailwind • Firebase",
     description:
       "A web application built for Lions Club featuring secure Auth.js user authentication, member directory, and community service management.",
     leftMetric: "Community Web App",
@@ -100,7 +100,7 @@ const projects: Project[] = [
     categoryBadges: ["E-Commerce / Heritage", "Full Stack"],
     rating: "4.9",
     statusTag: "Live Product",
-    techStack: "Next.js 16 • React • Tailwind CSS • Lucide • Netlify",
+    techStack: "Next.js 16 • React • Tailwind CSS • Firebase • zustand",
     description:
       "A heritage e-commerce web application celebrating traditional Sungudi craft, built with Next.js App Router, Tailwind CSS, Lucide icons, and deployed on Netlify.",
     leftMetric: "Heritage Store",
@@ -108,6 +108,36 @@ const projects: Project[] = [
     image: "/projects/templeofsungudi1.webp",
     githubUrl: "https://github.com/sandeshdulawat",
     liveUrl: "https://courageous-valkyrie-89ff68.netlify.app/",
+  },
+  {
+    id: "valmont",
+    title: "Valmont & Co.",
+    categoryBadges: ["Luxury / 3D AR", "Full Stack"],
+    rating: "4.9",
+    statusTag: "Featured",
+    techStack: "Next.js 16 • Three.js • MySQL • Framer Motion • Netlify",
+    description:
+      "A luxury bespoke sculptural furniture platform featuring 3D studio turntables, WebAR view-in-room visualization, and interactive AI room styling.",
+    leftMetric: "3D / AR Store",
+    leftMetricLabel: "Live Production",
+    image: "/projects/valmont.webp",
+    githubUrl: "https://github.com/sandeshdulawat",
+    liveUrl: "https://joyful-narwhal-727053.netlify.app/",
+  },
+  {
+    id: "roveconcept",
+    title: "Rove Concepts",
+    categoryBadges: ["Luxury / E-Com", "Full Stack"],
+    rating: "5.0",
+    statusTag: "Featured",
+    techStack: "Next.js 16 • React • Tailwind CSS • MySQL • Zustand • Lucide",
+    description:
+      "A refined luxury lifestyle & e-commerce furniture platform featuring modern catalog browsing, Zustand state management, MySQL database integration, and high-performance Next.js Turbopack architecture.",
+    leftMetric: "Luxury E-Com",
+    leftMetricLabel: "Live Production",
+    image: "/projects/roveconcept.webp",
+    githubUrl: "https://github.com/sandeshdulawat",
+    liveUrl: "https://astonishing-malasada-4bea09.netlify.app/",
   },
 ];
 
