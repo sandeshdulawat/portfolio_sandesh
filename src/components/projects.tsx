@@ -82,7 +82,7 @@ const projects: Project[] = [
   {
     id: "koohlab",
     title: "Koohlab",
-    categoryBadges: ["Workflow / Node", "Full Stack"],
+    categoryBadges: ["Workflow / Node", "SaaS", "Full Stack"],
     rating: "5.0",
     statusTag: "Featured",
     techStack: "React.js • React Flow • FastAPI • Supabase • Zustand • Tailwind",
