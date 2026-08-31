@@ -107,7 +107,7 @@ const projects: Project[] = [
     leftMetricLabel: "Live Production",
     image: "/projects/templeofsungudi1.webp",
     githubUrl: "https://github.com/sandeshdulawat",
-    liveUrl: "https://courageous-valkyrie-89ff68.netlify.app/",
+    liveUrl: "https://creative-sunburst-a3d465.netlify.app/",
   },
   {
     id: "valmont",
