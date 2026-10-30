@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
+import DesktopApps from "@/components/desktop-apps";
 import Skills from "@/components/skills";
 import Contact from "@/components/contact";
 import SmoothScroll from "@/components/smooth-scroll";
@@ -14,6 +15,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <Projects />
+        <DesktopApps />
         <Skills />
         <Contact />
 

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Hammer } from "lucide-react";
 
 interface Project {
   id: string;
@@ -16,9 +17,28 @@ interface Project {
   image: string;
   githubUrl: string;
   liveUrl: string;
+  isUnderDevelopment?: boolean;
+  developmentTag?: string;
 }
 
 const projects: Project[] = [
+  {
+    id: "lionsclub",
+    title: "Lions Club",
+    categoryBadges: ["Community App", "Full Stack"],
+    rating: "5.0",
+    statusTag: "In Progress",
+    techStack: "React • JavaScript • Auth.js • Tailwind • Firebase",
+    description:
+      "A web application currently under active development for Lions Club featuring secure Auth.js user authentication, member directory, and community service management.",
+    leftMetric: "Community Web App",
+    leftMetricLabel: "Under Development",
+    image: "/projects/lionsclub.webp",
+    githubUrl: "https://github.com/sandeshdulawat",
+    liveUrl: "https://tranquil-haupia-724cda.netlify.app/",
+    isUnderDevelopment: true,
+    developmentTag: "Under Active Development",
+  },
   {
     id: "bnks.io",
     title: "bnks.io",
@@ -33,21 +53,6 @@ const projects: Project[] = [
     image: "/projects/bnks.io.webp",
     githubUrl: "https://github.com/sandeshdulawat",
     liveUrl: "https://bnks.io",
-  },
-  {
-    id: "lionsclub",
-    title: "Lions Club",
-    categoryBadges: ["Community App", "Full Stack"],
-    rating: "5.0",
-    statusTag: "Featured",
-    techStack: "React • JavaScript • Auth.js • Tailwind • Firebase",
-    description:
-      "A web application built for Lions Club featuring secure Auth.js user authentication, member directory, and community service management.",
-    leftMetric: "Community Web App",
-    leftMetricLabel: "Live Production",
-    image: "/projects/lionsclub.webp",
-    githubUrl: "https://github.com/sandeshdulawat",
-    liveUrl: "https://tranquil-haupia-724cda.netlify.app/",
   },
   {
     id: "coreconceptinteriors",
@@ -69,7 +74,7 @@ const projects: Project[] = [
     title: "Kala Design Studio",
     categoryBadges: ["Design Agency", "WordPress / GSAP"],
     rating: "5.0",
-    statusTag: "Featured",
+    statusTag: "Live Product",
     techStack: "WordPress • Elementor • GSAP • Swiper • LottieFiles",
     description:
       "A modern digital design agency website featuring high-end GSAP scroll animations, interactive Lottie micro-interactions, and Elementor integration.",
@@ -78,6 +83,21 @@ const projects: Project[] = [
     image: "/projects/kaladesignstudio.webp",
     githubUrl: "https://github.com/sandeshdulawat",
     liveUrl: "https://kaladesignstudio.com/",
+  },
+  {
+    id: "templeofsungudi",
+    title: "Temple of Sungudi",
+    categoryBadges: ["E-Commerce / Heritage", "Full Stack"],
+    rating: "4.9",
+    statusTag: "Live Product",
+    techStack: "Next.js 16 • React • Tailwind CSS • Firebase • zustand",
+    description:
+      "A heritage e-commerce web application celebrating traditional Sungudi craft, built with Next.js App Router, Tailwind CSS, Lucide icons, and deployed on Netlify.",
+    leftMetric: "Heritage Store",
+    leftMetricLabel: "Live Production",
+    image: "/projects/templeofsungudi1.webp",
+    githubUrl: "https://github.com/sandeshdulawat",
+    liveUrl: "https://templeofsungudi.com",
   },
   {
     id: "koohlab",
@@ -93,21 +113,6 @@ const projects: Project[] = [
     image: "/projects/koohlab.webp",
     githubUrl: "https://github.com/sandeshdulawat",
     liveUrl: "https://koohlab.netlify.app/",
-  },
-  {
-    id: "templeofsungudi",
-    title: "Temple of Sungudi",
-    categoryBadges: ["E-Commerce / Heritage", "Full Stack"],
-    rating: "4.9",
-    statusTag: "Live Product",
-    techStack: "Next.js 16 • React • Tailwind CSS • Firebase • zustand",
-    description:
-      "A heritage e-commerce web application celebrating traditional Sungudi craft, built with Next.js App Router, Tailwind CSS, Lucide icons, and deployed on Netlify.",
-    leftMetric: "Heritage Store",
-    leftMetricLabel: "Live Production",
-    image: "/projects/templeofsungudi1.webp",
-    githubUrl: "https://github.com/sandeshdulawat",
-    liveUrl: "https://creative-sunburst-a3d465.netlify.app/",
   },
   {
     id: "valmont",
@@ -227,22 +232,42 @@ export default function Projects() {
                 ))}
               </div>
 
-              {/* Overlaid Rating Badge (Top Right) */}
+              {/* Overlaid Rating / Status Badge (Top Right) */}
               <div className="absolute top-3 right-3 z-10">
-                <span className="px-3 py-1 rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-white font-semibold text-xs inline-flex items-center gap-1 shadow-xs">
-                  <span className="text-amber-300">★</span>
-                  <span>{project.rating}</span>
-                </span>
+                {project.isUnderDevelopment ? (
+                  <span className="px-2.5 py-1 rounded-full bg-neutral-900/80 backdrop-blur-md border border-amber-400/40 text-amber-300 font-semibold text-[11px] inline-flex items-center gap-1 shadow-xs">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-amber-400">⚡</span>
+                    <span>WIP</span>
+                  </span>
+                ) : (
+                  <span className="px-3 py-1 rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-white font-semibold text-xs inline-flex items-center gap-1 shadow-xs">
+                    <span className="text-amber-300">★</span>
+                    <span>{project.rating}</span>
+                  </span>
+                )}
               </div>
 
-              {/* Overlaid Carousel Indicator Dots (Bottom Center) */}
-              <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
-                <span className="w-2 h-2 rounded-full bg-white shadow-xs" />
-                <span className="w-2 h-2 rounded-full bg-white/40 shadow-xs" />
-                <span className="w-2 h-2 rounded-full bg-white/40 shadow-xs" />
-                <span className="w-2 h-2 rounded-full bg-white/40 shadow-xs" />
-                <span className="w-2 h-2 rounded-full bg-white/40 shadow-xs" />
-              </div>
+              {/* Overlaid Status Tag (Bottom Left) or Carousel Indicator Dots (Bottom Center) */}
+              {project.isUnderDevelopment ? (
+                <div className="absolute bottom-3 left-3 z-10">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-950/85 backdrop-blur-md border border-amber-400/40 text-amber-300 font-semibold text-[11px] tracking-wide shadow-md">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+                    </span>
+                    <Hammer className="w-3 h-3 text-amber-400 shrink-0" />
+                    <span>{project.developmentTag || "Under Active Development"}</span>
+                  </span>
+                </div>
+              ) : (
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
+                  <span className="w-2 h-2 rounded-full bg-white shadow-xs" />
+                  <span className="w-2 h-2 rounded-full bg-white/40 shadow-xs" />
+                  <span className="w-2 h-2 rounded-full bg-white/40 shadow-xs" />
+                  <span className="w-2 h-2 rounded-full bg-white/40 shadow-xs" />
+                  <span className="w-2 h-2 rounded-full bg-white/40 shadow-xs" />
+                </div>
+              )}
             </div>
 
             {/* Bottom Content Area */}
@@ -254,7 +279,12 @@ export default function Projects() {
                     {project.title}
                   </h3>
 
-                  <span className="px-3 py-1 rounded-full border border-neutral-200 text-xs font-medium text-neutral-700 bg-neutral-50/80">
+                  <span
+                    className={`px-3 py-1 rounded-full border text-xs font-medium ${project.isUnderDevelopment
+                      ? "border-amber-300/80 text-amber-800 bg-amber-50/90"
+                      : "border-neutral-200 text-neutral-700 bg-neutral-50/80"
+                      }`}
+                  >
                     {project.statusTag}
                   </span>
                 </div>
